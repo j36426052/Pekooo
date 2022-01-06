@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=BIG5"
     pageEncoding="BIG5"%>
+<%@ page import ="PPeko.Testing" %>
 <!DOCTYPE html>
 <style>
     @import "mainpage.css";
@@ -9,15 +10,24 @@
         <title>Ludum</title>
     </head>
     <body>
+    
+    	<jsp:useBean id="peko" class="Testing" scope="page"></jsp:useBean>
+		
+	    <%
+	    
+	    Testing te = new Testing();
+	    te.test();
+	    %>
+	    
         <div class="flex">
             <a >
                 <img src="icon.png" height="250px" width="250px">
             </a>
         </div>
         <div class="container">
-            <form action="" class="parent">
-                <input type="text" class="search" placeholder=" ">
-                <input type="button" name="" id="" class="btn" >
+            <form action="result.jsp" method="post" class="parent">
+                <input type="text" name = "keyword" class="search" placeholder=" ">
+                <input type="submit" name="" id="" class="btn" >
             </form>
         </div>
         <div class="content">不知道要玩什麼嗎?看看這些推薦吧</div>

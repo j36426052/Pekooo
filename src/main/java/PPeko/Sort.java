@@ -1,3 +1,4 @@
+package PPeko;
 import java.util.ArrayList;
 
 public class Sort {
@@ -44,23 +45,12 @@ public class Sort {
 		games.set(bIndex, temp);
 	}
 
-	public void output() {
+	public ArrayList<Game> output() {
+		/**
 		for (Game game : games) {
 			System.out.println("[" + game.getName() + "," + game.getKey().getCount() + "," + game.getPrices()+ "," + game.geturl()+ "]");
 		}
-	}
-	
-	public String output(int game,int type) {
-		String result = "";
-		if(type == 1) {
-			result = games.get(game).getName();
-		}else if(type == 2) {
-			result = games.get(game).getPrices();
-		}else if(type == 3) {
-			result = games.get(game).geturl();
-		}else {
-			result = "null";
-		}
-		return result;
+		*/
+		return games;
 	}
 }
