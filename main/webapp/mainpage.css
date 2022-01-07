@@ -1,0 +1,61 @@
+body{
+    background-image:url("background.png");
+    background-attachment: fixed;
+    background-size:cover;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.flex{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top: 100px;
+  }
+.container {
+    height: 70px;
+    width: 500px;
+    justify-content: center;
+    margin: 60px auto 10px auto;
+}
+.parent {
+    position: relative;
+    padding-left: auto;
+}
+.search {
+    width: 500px;
+    height: 40px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    position: absolute;
+
+}
+.btn {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    background:url("magnifier.png")  -2px -99px;
+    background-size:contain;
+    top: 4px;
+    left: 470px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.content{
+    color:white;
+    margin: 0px auto 15px auto;
+    text-align: center;
+}
+.contain {
+    width: 600px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tile{
+    margin-right:20px ;
+    margin-left: 20px;
+    padding: 10px 10px 10px 10px;
+    justify-content: center;
+}
