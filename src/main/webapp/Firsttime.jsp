@@ -16,7 +16,7 @@
             </a>
         </div>
         <div class="container">
-            <form action="result.jsp" method="post" class="parent">
+            <form action="result.jsp" method="post" class="parent" accept-charset="utf-8">
                 <input type="text" name = "keyword" class="search" placeholder=" ">
                 <input type="submit" name="" id="" class="btn" >
             </form>
