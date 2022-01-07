@@ -16,7 +16,7 @@
     	
     	<%
     	Search se = new Search();
-    	se.gogogo(request.getParameter("keyword"));
+    	se.gogogo(new String(request.getParameter("keyword"),getBytes("iso-8859-1"),"UTF-8"));
 	    %>
     
         <div class ="container">
