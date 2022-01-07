@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
-<%@ page import ="PPeko.Testing" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <style>
     @import "mainpage.css";
@@ -10,14 +9,6 @@
         <title>Ludum</title>
     </head>
     <body>
-    
-    	<jsp:useBean id="peko" class="Testing" scope="page"></jsp:useBean>
-		
-	    <%
-	    
-	    Testing te = new Testing();
-	    te.test();
-	    %>
 	    
         <div class="flex">
             <a >
@@ -30,7 +21,7 @@
                 <input type="submit" name="" id="" class="btn" >
             </form>
         </div>
-        <div class="content">¤£ª¾¹D­nª±¤°»ò¶Ü?¬İ¬İ³o¨Ç±ÀÂË§a</div>
+        <div class="content">ä¸çŸ¥é“è¦ç©ä»€éº¼å—?çœ‹çœ‹é€™äº›æ¨è–¦å§</div>
         <div class="contain">
                 <a class="tile" href="https://store.steampowered.com/search/?filter=topsellers">Steam</a>
                 <a class="tile" href="https://www.origin.com/twn/store">Origin</a>

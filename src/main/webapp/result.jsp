@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=BIG5"
-    pageEncoding="BIG5"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import ="PPeko.Search" %>
 <!DOCTYPE html>
 <style>
@@ -13,6 +13,7 @@
     	
     	<jsp:useBean id="keyword" class="Search" scope="page"></jsp:useBean>
 	    <jsp:setProperty property="*" name="keyword" />
+    	
     	<%
     	Search se = new Search();
     	se.gogogo(request.getParameter("keyword"));
@@ -28,79 +29,23 @@
         </div>
         <div class="contain">
             <div class="resultarea">
-                <div class="resultlist">
-                	<a href=<%= se.output(0, 3) %>>
-                    <div class="chunk">
-                        <div class="gamename"><%= se.output(0, 1) %></div>
-                        <div class="gameprice"><%= se.output(0, 2) %></div><br>
-                        <div class="gametags">Tag1 Tag2 Tag3</div>
-                    </div>
-                    </a>
-                    <div class="scorearea">
-                        <div class="mainscore">¡`§¿º∆°G<span class="score">100</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂1°G<span class="score">30</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂2°G<span class="score">25</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂3°G<span class="score">19</span>§¿</div><br>
-                    </div>
-                </div>
-                <div class="resultlist">
-                	<a href=<%= se.output(1, 3) %>>
-                    <div class="chunk">
-                        <div class="gamename"><%= se.output(1, 1) %></div>
-                        <div class="gameprice"><%= se.output(1, 2) %></div><br>
-                        <div class="gametags">Tag1 Tag2 Tag3</div>
-                    </div>
-                    </a>
-                    <div class="scorearea">
-                        <div class="mainscore">¡`§¿º∆°G<span class="score">80</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂1°G<span class="score">19</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂2°G<span class="score">25</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂3°G<span class="score">14</span>§¿</div><br>
-                    </div>
-                </div>
-                <div class="resultlist">
-                	<a href=<%= se.output(2, 3) %>>
-                    <div class="chunk">
-                        <div class="gamename"><%= se.output(2, 1) %></div>
-                        <div class="gameprice"><%= se.output(2, 2) %></div><br>
-                        <div class="gametags">Tag1 Tag2 Tag3</div>
-                    </div>
-                    </a>
-                    <div class="scorearea">
-                        <div class="mainscore">¡`§¿º∆°G<span class="score">65</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂1°G<span class="score">12</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂2°G<span class="score">17</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂3°G<span class="score">14</span>§¿</div><br>
-                    </div>
-                </div>
-                <div class="resultlist">
-                	<a href=<%= se.output(3, 3) %>>
-                    <div class="chunk">
-                        <div class="gamename"><%= se.output(3, 1) %></div>
-                        <div class="gameprice"><%= se.output(3, 2) %></div><br>
-                        <div class="gametags">Tag1 Tag2 Tag3</div>
-                    </div>
-                    </a>
-                    <div class="scorearea">
-                        <div class="mainscore">¡`§¿º∆°G<span class="score">54</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂1°G<span class="score">10</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂2°G<span class="score">9</span>§¿</div><br>
-                        <div class="subscore">§l∫Ù≠∂3°G<span class="score">11</span>§¿</div><br>
-                    </div>
-                </div>
+            
+            	<%= se.printAllArea() %>
+            	
+                
             </div>
             <div class="options">
                 <div class="row">
-                    <div class="label">´_¿I</div>
-                    <div class="label">¶h§H¶Xß@</div>
+                    <div class="label">ÂÜíÈö™</div>
+                    <div class="label">Â§ö‰∫∫Âêà‰Ωú</div>
                 </div>
                 <div class="row">
-                    <div class="label">ÆÊ∞´</div>
-                    <div class="label">º“¿¿</div>
+                    <div class="label">Ê†ºÈ¨•</div>
+                    <div class="label">Ê®°Êì¨</div>
                 </div>
                 <div class="row">
-                    <div class="label">Æ£©∆</div>
-                    <div class="label">§j´¨¶h§H≥sΩu</div>
+                    <div class="label">ÊÅêÊÄñ</div>
+                    <div class="label">Â§ßÂûãÂ§ö‰∫∫ÈÄ£Á∑ö</div>
                 </div>
             </div>            
         </div>

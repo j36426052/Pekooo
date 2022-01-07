@@ -13,6 +13,7 @@ public class Search {
 	
 	private String keyword;
 	private ArrayList<Game> games;
+	private int resultNum;
 	
 	public String getKeyword() {
 		return keyword;
@@ -41,6 +42,42 @@ public class Search {
 		}else {
 			result = "null";
 		}
+		return result;
+	}
+	
+	public String printAllArea() {
+		String result = "";
+		if(resultNum != 0) {
+			for(int i = 0;i<resultNum;i++) {
+				result += printArea(i);
+			}
+			return result;
+		}else {
+			return " <div class=\"gamename\">查無遊戲</div>\n";
+		}
+	}
+	
+	public String printArea(int game) {
+		
+		String result = "";
+		result += "<div class=\"resultlist\">\n";
+		result += "	<a href= " + output(game, 3) +"> \n";
+		result += "		<div class=\"chunk\">\n";
+		result += "			<div class=\"gamename\">"+output(game, 1)+"</div>\n";
+		result += "			<div class=\"gameprice\">"+output(game, 2)+"</div><br>\n";
+		//result += "			<div class=\"gametags\">Tag1 Tag2 Tag3</div>\n";
+		result += "		</div>\n";
+		result += "	</a>\n";
+		//result += "	<div class=\"scorearea\">\n";
+		//result += "		<div class=\"mainscore\">總分數：<span class=\"score\">65</span>分</div><br>\n";
+		//result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">12</span>分</div><br>\n";
+		//result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">17</span>分</div><br>\n";
+		//result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">14</span>分</div><br>\n";
+		//result += "	</div>\n";
+		result += "</div>\n \n";
+		
+		
+		System.out.print(result);
 		return result;
 	}
 	
@@ -106,6 +143,7 @@ public class Search {
 			gameList.get(cc-1).setPrices(price);
 		}
 		
+		resultNum = cc;
 		//把url 變成 game
 		
 		//連進google
