@@ -81,10 +81,10 @@ public class Search {
 		return result;
 	}
 	
-	public void gogogo(String keword) throws IOException {
+	public void gogogo(String peko) throws IOException {
 		
-		//String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
-		this.keyword = keword;
+		String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
+		//this.keyword = keword;
 		ArrayList<Game> gameList = new ArrayList<Game>();
 		Scanner scanner = new Scanner(System.in);
 		
