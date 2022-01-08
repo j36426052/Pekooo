@@ -17,6 +17,7 @@
     	<%
     	Search se = new Search();
     	request.setCharacterEncoding("UTF-8");
+	response.setContentType("UTF-8");
     	se.gogogo(request.getParameter("keyword"));
 	    %>
     
