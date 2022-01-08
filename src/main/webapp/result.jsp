@@ -34,21 +34,7 @@
             	<%= se.printAllArea() %>
             	
                 
-            </div>
-            <div class="options">
-                <div class="row">
-                    <div class="label">冒險</div>
-                    <div class="label">多人合作</div>
-                </div>
-                <div class="row">
-                    <div class="label">格鬥</div>
-                    <div class="label">模擬</div>
-                </div>
-                <div class="row">
-                    <div class="label">恐怖</div>
-                    <div class="label">大型多人連線</div>
-                </div>
-            </div>            
+            </div>           
         </div>
     </body>
 </html>
