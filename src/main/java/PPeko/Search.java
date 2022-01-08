@@ -87,6 +87,10 @@ public class Search {
 	}
 	
 	public void gogogo(String peko) throws IOException {
+		if(peko == "") {
+			return;
+		}
+		
 		
 		String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
 		//this.keyword = keword;
