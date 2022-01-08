@@ -53,7 +53,12 @@ public class Search {
 			}
 			return result;
 		}else {
-			return " <div class=\"gamename\">查無遊戲</div>\n";
+			result += "<div class=\"resultlist\">\n";
+			result += "		<div class=\"chunk\">\n";
+			result += "			<div class=\"gamename\">"+"查無遊戲"+"</div>\n";
+			result += "		</div>\n";
+			result += "</div>\n \n";
+			return result;
 		}
 	}
 	

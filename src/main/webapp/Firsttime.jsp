@@ -18,7 +18,7 @@
         <div class="container">
             <form action="result.jsp" method="post" class="parent">
                 <input type="text" name = "keyword" class="search" placeholder=" ">
-                <input type="submit" name="" id="" class="btn" value="">
+                <input type="submit" class="btn" value="" >
             </form>
         </div>
         <div class="content">不知道要玩什麼嗎?看看這些推薦吧</div>
