@@ -68,12 +68,12 @@ public class Search {
 		//result += "			<div class=\"gametags\">Tag1 Tag2 Tag3</div>\n";
 		result += "		</div>\n";
 		result += "	</a>\n";
-		//result += "	<div class=\"scorearea\">\n";
-		//result += "		<div class=\"mainscore\">總分數：<span class=\"score\">65</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">12</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">17</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">14</span>分</div><br>\n";
-		//result += "	</div>\n";
+		result += "	<div class=\"scorearea\">\n";
+		result += "		<div class=\"mainscore\">總分數：<span class=\"score\">65</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">12</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">17</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">14</span>分</div><br>\n";
+		result += "	</div>\n";
 		result += "</div>\n \n";
 		
 		
@@ -81,7 +81,10 @@ public class Search {
 		return result;
 	}
 	
-	public void gogogo(String keyword) throws IOException {
+	public void gogogo(String keword) throws IOException {
+		
+		//String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
+		this.keyword = keword;
 		ArrayList<Game> gameList = new ArrayList<Game>();
 		Scanner scanner = new Scanner(System.in);
 		

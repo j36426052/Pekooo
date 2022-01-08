@@ -30,8 +30,7 @@ public class Search {
 	
 	
 	
-	public void gogogo(String peko)  throws IOException {
-		String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
+	public void gogogo(String keyword)  throws IOException {
 		ArrayList<Game> gameList = new ArrayList<Game>();
 		Scanner scanner = new Scanner(System.in);
 		
