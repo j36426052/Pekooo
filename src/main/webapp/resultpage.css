@@ -72,6 +72,7 @@ body{
     position: absolute;
     text-overflow: ellipsis;
     width:400px;
+    word-break: break-all;
 }
 .gameprice{
     color:#bdccd4;
