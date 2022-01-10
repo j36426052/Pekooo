@@ -90,7 +90,7 @@ public class Search {
 		result += "</div>\n \n";
 		
 		
-		System.out.print(result);
+		//System.out.print(result);
 		return result;
 	}
 	
@@ -98,12 +98,18 @@ public class Search {
 		if(peko == "") {
 			return;
 		}
-		
-		
-		String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
-		if(keyword == "蜘蛛人") {
+		//System.out.println(peko);
+		if(peko.contains("蜘蛛人")) {
 			keyword ="spider man";
-		}else if(keyword == "蝙蝠俠") {
+		}else if(peko.contains("蝙蝠俠")) {
+			keyword ="Batman";
+		}else {
+			keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
+		}
+		
+		if(keyword.contains("蜘蛛人")) {
+			keyword ="spider man";
+		}else if(keyword.contains("蝙蝠俠")) {
 			keyword ="Batman";
 		}
 		
@@ -145,12 +151,16 @@ public class Search {
 
 		//取得 html
 		Document html1 = con1.get();
+		
+		
 		//取的每個遊戲的名字 和 url
 		Elements urls = html1.select("div#search_resultsRows a");
 		Elements names = html1.select("span.title");
 		Elements prices = html1.select("div.col.search_price.responsive_secondrow");
 		
 		int ac=0,bc=0,cc=0;
+		
+		//System.out.println(names);
 		
 		for (Element e : names) {
 			ac++;
@@ -187,7 +197,11 @@ public class Search {
 		int a = 0;
 		String[] childPage = {"","",""};
 		for (Element e : childURL) {
-			Connection child = Jsoup.connect(e.attr("abs:href"));
+			String urltem = e.attr("abs:href");
+			if(urltem.contains("amazon")){
+				continue;
+			}
+			Connection child = Jsoup.connect(urltem);
 			//System.out.println(e.attr("abs:href"));
 			Document cd = child.get();
 			//dataG += cd.text();
