@@ -11,7 +11,7 @@ body{
 
 }
 .search{
-    color: #3c4951;
+    background-color: #3c4951;
     width: 600px;
     height: 40px;
     border-radius: 18px;
@@ -22,6 +22,19 @@ body{
     position: absolute;
     justify-content: center;
     opacity: 0.4;
+}
+.btn {
+    background-color: #3c4951;
+    height: 35px;
+    width: 55px;
+    position: relative;
+    background-size:contain;
+    top: 39px;
+    left: 550px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 18px;
 }
 .icon,.parent{
     display: inline-block;
