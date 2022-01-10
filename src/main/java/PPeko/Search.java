@@ -101,6 +101,12 @@ public class Search {
 		
 		
 		String keyword = new String(peko.getBytes("iso-8859-1"),"UTF-8");
+		if(keyword == "蜘蛛人") {
+			keyword ="spider man";
+		}else if(keyword == "蝙蝠俠") {
+			keyword ="Batman";
+		}
+		
 		//this.keyword = keword;
 		ArrayList<Game> gameList = new ArrayList<Game>();
 		Scanner scanner = new Scanner(System.in);
