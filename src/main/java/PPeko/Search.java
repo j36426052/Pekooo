@@ -127,7 +127,7 @@ public class Search {
 		String URL = URL1 + URL2;
 		
 		//連進 steam網站，抓取目標遊戲名稱還有URL
-		URL = "https://imbaicdf.nccu.edu.tw/index.php/food/";
+		//URL = "https://store.steampowered.com/search/?term=";
 		Connection con1 = Jsoup.connect(URL);
 		System.out.println("Now connecting to " + URL);
 
