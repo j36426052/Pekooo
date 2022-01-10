@@ -24,7 +24,7 @@
         <div class="content">不知道要玩什麼嗎?看看這些推薦吧</div>
         <div class="contain">
                 <a class="tile" href="https://store.steampowered.com/search/?filter=topsellers">Steam</a>
-                <a class="tile" href="https://www.origin.com/twn/store">Origin</a>
+                <a class="tile" href="https://www.origin.com/twn/zh-tw/store">Origin</a>
                 <a class="tile" href="https://www.ubisoft.com/zh-tw/games">Ubisoft</a>
                 <a class="tile" href="https://www.microsoft.com/zh-tw/store/games">Microsoft</a>
                 <a class="tile" href="http://soslab.nccu.edu.tw/Welcome.html">Surprise</a>
