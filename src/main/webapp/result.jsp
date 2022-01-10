@@ -26,6 +26,7 @@
             </a>
             <form action="result.jsp" method="post" class="parent">
                 <input type="text" class="search" name="keyword" placeholder=" ">
+		<input type="sibmit" name="search" id="" class="btn" value="Search">
             </form>
         </div>
         <div class="contain">
