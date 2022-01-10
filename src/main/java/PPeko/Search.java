@@ -60,7 +60,7 @@ public class Search {
 				result += printArea(i);
 			}
 			return result;
-		}else {
+		}else{
 			result += "<div class=\"resultlist\">\n";
 			result += "		<div class=\"chunk\">\n";
 			result += "			<div class=\"gamename\">"+"查無遊戲"+"</div>\n";
@@ -196,12 +196,24 @@ public class Search {
 		Elements childURL = html2.select("div.yuRUbf>a[href]");
 		int a = 0;
 		String[] childPage = {"","",""};
+		
 		for (Element e : childURL) {
 			String urltem = e.attr("abs:href");
 			if(urltem.contains("amazon")){
 				continue;
 			}
-			Connection child = Jsoup.connect(urltem);
+			
+			Connection child;
+			try {
+				Connection test = Jsoup.connect(urltem);
+				if(1 == 2) {
+					throw new org.jsoup.HttpStatusException("",1,"");
+				}
+			}catch(org.jsoup.HttpStatusException excep) {
+				continue;
+			}
+			
+			child = Jsoup.connect(urltem);
 			//System.out.println(e.attr("abs:href"));
 			Document cd = child.get();
 			//dataG += cd.text();
