@@ -203,19 +203,15 @@ public class Search {
 				continue;
 			}
 			
-			Connection child;
+			Document cd;
 			try {
-				Connection test = Jsoup.connect(urltem);
-				if(1 == 2) {
-					throw new org.jsoup.HttpStatusException("",1,"");
-				}
+				Connection child = Jsoup.connect(urltem);
+				cd = child.get();
 			}catch(org.jsoup.HttpStatusException excep) {
 				continue;
 			}
-			
-			child = Jsoup.connect(urltem);
 			//System.out.println(e.attr("abs:href"));
-			Document cd = child.get();
+			
 			//dataG += cd.text();
 			childPage[a] = cd.text();
 			a++;
