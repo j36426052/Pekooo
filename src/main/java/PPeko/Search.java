@@ -213,11 +213,15 @@ public class Search {
 		for (Game game : gameList) {
 			Keyword k = game.getKey();
 			KeywordCounter keywordCounter = new KeywordCounter(dataG, k.getName());
-			game.setChildCount(0,new KeywordCounter(childPage[0], k.getName()).getCount()); 
-			game.setChildCount(1,new KeywordCounter(childPage[1], k.getName()).getCount()); 
-			game.setChildCount(2,new KeywordCounter(childPage[2], k.getName()).getCount()); 
+			int child1 = new KeywordCounter(childPage[0], k.getName()).getCount();
+			int child2 = new KeywordCounter(childPage[1], k.getName()).getCount();
+			int child3 = new KeywordCounter(childPage[2], k.getName()).getCount();
 			
-			k.setCount(keywordCounter.getCount());
+			game.setChildCount(0,child1);
+			game.setChildCount(0,child2);
+			game.setChildCount(0,child3);
+			
+			k.setCount(keywordCounter.getCount()+child1+child2+child3);
 		}
 		
 		Sort sort = new Sort(gameList,666);
