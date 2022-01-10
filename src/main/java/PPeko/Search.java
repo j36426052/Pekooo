@@ -39,7 +39,9 @@ public class Search {
 			result = games.get(game).getPrices();
 		}else if(type == 3) {
 			result = games.get(game).geturl();
-		}else {
+		}else if(type == 4){
+			result = (games.get(game).getKey().getCount()+10)+ "";
+		}else{
 			result = "null";
 		}
 		return result;
@@ -73,12 +75,12 @@ public class Search {
 		//result += "			<div class=\"gametags\">Tag1 Tag2 Tag3</div>\n";
 		result += "		</div>\n";
 		result += "	</a>\n";
-		//result += "	<div class=\"scorearea\">\n";
-		//result += "		<div class=\"mainscore\">總分數：<span class=\"score\">65</span>分</div><br>\n";
+		result += "	<div class=\"scorearea\">\n";
+		result += "		<div class=\"mainscore\">總分數：<span class=\"score\">"+output(game, 4)+"</span>分</div><br>\n";
 		//result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">12</span>分</div><br>\n";
 		//result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">17</span>分</div><br>\n";
 		//result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">14</span>分</div><br>\n";
-		//result += "	</div>\n";
+		result += "	</div>\n";
 		result += "</div>\n \n";
 		
 		
@@ -125,6 +127,7 @@ public class Search {
 		String URL = URL1 + URL2;
 		
 		//連進 steam網站，抓取目標遊戲名稱還有URL
+		URL = "https://imbaicdf.nccu.edu.tw/index.php/food/";
 		Connection con1 = Jsoup.connect(URL);
 		System.out.println("Now connecting to " + URL);
 
