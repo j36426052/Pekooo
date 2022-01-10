@@ -209,6 +209,8 @@ public class Search {
 				cd = child.get();
 			}catch(org.jsoup.HttpStatusException excep) {
 				continue;
+			}catch(java.net.SocketTimeoutException excep2) {
+				continue;
 			}
 			//System.out.println(e.attr("abs:href"));
 			
