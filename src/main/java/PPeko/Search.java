@@ -41,6 +41,12 @@ public class Search {
 			result = games.get(game).geturl();
 		}else if(type == 4){
 			result = (games.get(game).getKey().getCount()+10)+ "";
+		}else if(type == 51){
+			result = games.get(game).getChild(0) + "";
+		}else if(type == 52){
+			result = games.get(game).getChild(1) + "";
+		}else if(type == 53){
+			result = games.get(game).getChild(2) + "";
 		}else{
 			result = "null";
 		}
@@ -77,9 +83,9 @@ public class Search {
 		result += "	</a>\n";
 		result += "	<div class=\"scorearea\">\n";
 		result += "		<div class=\"mainscore\">總分數：<span class=\"score\">"+output(game, 4)+"</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">12</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">17</span>分</div><br>\n";
-		//result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">14</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁1：<span class=\"score\">"+output(game, 51)+"</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁2：<span class=\"score\">"+output(game, 52)+"</span>分</div><br>\n";
+		result += "		<div class=\"subscore\">子網頁3：<span class=\"score\">"+output(game, 53)+"</span>分</div><br>\n";
 		result += "	</div>\n";
 		result += "</div>\n \n";
 		
@@ -172,16 +178,20 @@ public class Search {
 		
 		//抓google搜尋結果的網頁
 		Elements childURL = html2.select("div.yuRUbf>a[href]");
-		int a = 1;
-		/**
+		int a = 0;
+		String[] childPage = {"","",""};
 		for (Element e : childURL) {
 			Connection child = Jsoup.connect(e.attr("abs:href"));
-			System.out.println(e.attr("abs:href"));
+			//System.out.println(e.attr("abs:href"));
 			Document cd = child.get();
-			dataG += cd.text();
+			//dataG += cd.text();
+			childPage[a] = cd.text();
 			a++;
+			if(a >= 3) {
+				break;
+			}
 		}
-		*/
+		
 		
 		System.out.println("Connection 2 completed\nNow connecting to " + URLG1);
 		Connection con3 = Jsoup.connect(URLG1);
@@ -203,6 +213,10 @@ public class Search {
 		for (Game game : gameList) {
 			Keyword k = game.getKey();
 			KeywordCounter keywordCounter = new KeywordCounter(dataG, k.getName());
+			game.setChildCount(0,new KeywordCounter(childPage[0], k.getName()).getCount()); 
+			game.setChildCount(1,new KeywordCounter(childPage[1], k.getName()).getCount()); 
+			game.setChildCount(2,new KeywordCounter(childPage[2], k.getName()).getCount()); 
+			
 			k.setCount(keywordCounter.getCount());
 		}
 		

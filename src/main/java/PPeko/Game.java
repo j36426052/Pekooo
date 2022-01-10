@@ -8,6 +8,7 @@ public class Game {
 	private String url;
 	private ArrayList<String> tags;
 	private Keyword k;
+	private int[] childCount;
 
 	public Game(String name) {
 		this.name = name;
@@ -15,6 +16,7 @@ public class Game {
 		url = "";
 		tags = new ArrayList<String>();
 		k = new Keyword(name);
+		childCount = new int[]{0,0,0};
 	}
 	
 	public void setName(String name) {
@@ -25,6 +27,10 @@ public class Game {
 		this.url = url;
 	}
 	
+	public void setChildCount(int index,int count) {
+		childCount[index] = count;
+	}
+	
 	public void setPrices(String prices) {
 		this.prices = prices;
 	}
@@ -32,6 +38,9 @@ public class Game {
 		tags.add(tag);
 	}
 	
+	public int getChild(int index) {
+		return childCount[index];
+	}
 
 	public String getName() {
 		return name;
